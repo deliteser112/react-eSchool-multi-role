@@ -279,7 +279,7 @@ const updateYear = (value) => {
             <EvaluateStudents year={year} dataUserSubjects={dataUserSubjectState} />
           }
           {
-            !isAdmin && !isSecretar && !isProfessor &&
+            (!isSecretar && !isProfessor) &&
             <ReviewGrades dataUserSubjects={dataUserSubjectState} />
           }
           <h2>{isAdmin || isSecretar ? "Users" : "Note"}</h2>

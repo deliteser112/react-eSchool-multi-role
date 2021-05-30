@@ -52,18 +52,35 @@ export function EvaluateStudents(props){
     useEffect(()=>{
         setStudentsSubjects(array=>
             array.map((item, indexMap) => {
-                    const grade = studentsGrades.find(a=>a.userSubject === item._id && Number(a.partial) === Number(semester))
-                    return grade ? 
-                    {...item, gradeData: {_id:grade._id, grade:grade.grade??0, partial:grade.partial} } 
-                    : 
-                    {...item, gradeData: {_id:null, grade:0, partial:semester } } 
+                    return {...item,
+                         gradeData: 
+                            {
+                                _id:null, grade:0, partial:semester 
+                            } 
+                        } 
+                }
+            ))
+    }, [semester])
+
+    useEffect(()=>{
+        setStudentsSubjects(array=>
+            array.map((item, indexMap) => {
+                    if (item.gradeData?._id)
+                    {
+                        return item
+                    }else{
+                        const grade = studentsGrades.find(a=>a.userSubject === item._id && Number(a.partial) === Number(semester))
+                        return grade ? 
+                        {...item, gradeData: {_id:grade._id, grade:grade.grade??0, partial:grade.partial} } 
+                        : 
+                        {...item, gradeData: {_id:null, grade:0, partial:semester } } 
+                    }
             }))
     }, [studentsGrades, semester])
 
     const updateGrade = async (ev) =>{
         setSuccess(false)
         const { id, value } = ev.target;
-        console.log({ id, value })
         setStudentsSubjects(array=>
             array.map((item, indexMap) => 
                 item._id === id
@@ -77,23 +94,23 @@ export function EvaluateStudents(props){
             setSuccess(false)
             setError('')
             let resp = null;
-            if(idGrade){
-                resp = await axios.patch(
-                `subjectGrade/update/${idGrade}`,
-                    {
-                        grade: value
-                    }
-                );
-            }else{
-                resp = await axios.post(
-                    `subjectGrade/create`,
-                    {
-                        subjectStudent: id,
-                        partial: semester,
-                        grade: value
-                    }
-                );
-            }
+            // if(idGrade){
+            //     resp = await axios.patch(
+            //     `subjectGrade/update/${idGrade}`,
+            //         {
+            //             grade: value
+            //         }
+            //     );
+            // }else{
+            resp = await axios.post(
+                `subjectGrade/create`,
+                {
+                    subjectStudent: id,
+                    partial: semester,
+                    grade: value
+                }
+            );
+            //}
             if(resp.status === 200){
                 setSuccess(true)
                 const ids = dataUserSubjects.reduce((ids, item) => {
@@ -145,7 +162,7 @@ export function EvaluateStudents(props){
                 <thead>
                 <tr>
                     <th>Student</th>
-                    <th>Grade</th>
+                    <th>Last Grade</th>
                 </tr>
                 </thead>
                 <tbody>

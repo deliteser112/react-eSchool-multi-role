@@ -6,7 +6,7 @@ const subjectGradeControl = {
         const { ids } = req.body;
     
         let response = []
-        response = await subjectGrade.find().where('userSubject').in(ids).exec();
+        response = await subjectGrade.find().sort({updatedAt: -1}).where('userSubject').in(ids).exec();
         
         res.json(response);
     } catch (err) {
