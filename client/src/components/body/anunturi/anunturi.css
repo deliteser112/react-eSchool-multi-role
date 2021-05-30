@@ -1,0 +1,50 @@
+@import '~antd/dist/antd.css';
+
+.page__wrapper{
+    margin: 0 100px;
+    max-width: 35vh;
+}
+
+.slider{
+    margin: 0 5px;
+    border-radius: 5px;
+    height: 160px;
+    line-height: 160px;
+    border: 1px solid white;
+}
+
+.image{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    border-radius: inherit;
+    object-fit: fill;
+}
+
+.image.unu{
+    background: url("./Images/CB_balenciaga.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.image.doi{
+    background: url("./Images/JT_Balenciaga.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.image.trei{
+    background: url("./Images/kite.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.image.patru{
+    background: url("./Images/ltiv_dark.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}

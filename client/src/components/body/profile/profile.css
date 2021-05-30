@@ -1,0 +1,213 @@
+.profile__page{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile__page .col-left{
+    max-width: 400px;
+    min-width: 300px;
+    background: #0f2027;
+    background: linear-gradient(180deg, #4C4C4C,#4C4C4C, #1F1C18);
+    padding: 0 10px;
+    margin: auto auto auto 10px;
+    /* border: 1px solid #06251f; */
+    border-radius: 5px 25px 105px 15px;
+}
+
+.profile__page .col-left h2{
+    text-align: center;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    color: #06251f;
+    margin: 10px 0;
+}
+
+.profile__page .col-left label{
+    display: block;
+    margin-top: 5px;
+    color: #a1a1a1;
+}
+
+.profile__page .col-left input {
+    width: 100%;
+    height: 40px;
+    margin: 5px 0;
+    border: none;
+    outline: none;
+    color: whitesmoke;
+    background: #06251f;
+    padding: 0 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+.profile__page .col-left button {
+    background: #06251F;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 25px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.profile__page .col-left button:hover{
+    color: white;
+}
+
+.profile__page .col-right{
+    padding: 0 10px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.profile__page .col-right h2{
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    color: #06251f;
+    margin: 10px 0;
+}
+.table__wrapper{
+   overflow-x: auto;
+}
+
+.table__date{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table__date td,
+.table__date th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    min-width: 100px;
+}
+
+.table__date tr{
+    color: rgb(228, 228, 228);
+    font-weight: 00;
+}
+
+.table__date tr:nth-child(even){
+    background: #f2f2f2;
+    color: black;
+}
+
+.table__date th{
+    padding-top: 12px ;
+    padding-bottom: 12px ;
+    text-align: center;
+    background: #555;
+    color: whitesmoke;
+}
+
+.td__role{
+    text-align: center;
+}
+
+.table__date i {
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+}
+
+.table__date .fa-check{
+    color: green;
+}
+.alignRight{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.check__box{
+    width: 50px;
+    height: 20px;
+    transform:  translateY(3px);
+    display: flex;
+    margin: auto;
+}
+.table__date .fa-times{
+    color: red;
+}
+
+.table__date .fa-edit{
+    padding: 7px;
+    color: #777;
+    font-size: 15px;
+
+}
+
+.table__date .fa-edit:hover{
+    color: rgb(255, 255, 255);
+}
+
+.table__date tr:nth-child(even) .fa-edit:hover{
+    color: rgb(0, 0, 0);
+}
+
+.table__date .fa-user-times{
+    color:red;
+}
+
+
+/* --------- Edit User --------- */
+
+
+.check__row {
+    display: flex;
+}
+
+.edit__user .go__back{
+    background: #4C4C4C;
+    margin: 20px;
+    font-size: 1.2rem;
+}
+
+.edit__user .col-left{
+    margin-top: 50px;
+}
+
+.edit__user .col-left input{
+    background: #06251f96;
+}
+
+.edit__user .col-left .check__box{
+    width: 50px;
+    height: 20px;
+    transform:  translateY(3px);
+    margin: 10px 0;
+}
+
+.edit__user .col-left .check__box + label{
+    display: inline-block;
+    transform: translateY(15%);
+}
+
+.edit__user .col-left #isProfessor + label{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.edit__user .col-left #isSecretar + label{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.row button{
+    font-weight: 500;
+    color: rgba(180, 180, 180, 0.507);
+    text-shadow: 0 0 5px  #06251f;
+    padding: 5px 10px ;
+}
+
+.row :hover{
+    border-radius: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 5px  #06251f;
+    transition: all .1s ease-in-out;
+}
+
+.operation{
+    margin: 10px auto;
+    width: 30%;
+}
